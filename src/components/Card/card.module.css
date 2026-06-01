@@ -1,0 +1,97 @@
+.card {
+  background-color: var(--bg);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  break-inside: avoid;
+  display: inline-block;
+  box-shadow:
+    rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.authorProfile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.authorAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.authorMeta {
+  display: flex;
+  flex-direction: column;
+}
+
+.authorName {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.postDate {
+  font-size: 11px;
+  color: #777;
+}
+
+.categoryBadge {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 160px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  gap: 5px;
+}
+
+.productTitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.productDescription {
+  font-size: 13px;
+}
+
+.desiredOffer {
+  padding: 5px;
+  background-color: #f0f0f0;
+  font-size: 13px;
+  color: var(--text);
+  border-radius: 3px;
+}
