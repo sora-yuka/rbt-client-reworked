@@ -5,7 +5,6 @@ import styles from "./wrapper.module.css"
 const Wrapper = () => (
   <div>
     <Navbar />
-    <Header />
     <main className={styles.container}>
       <Outlet />
     </main>

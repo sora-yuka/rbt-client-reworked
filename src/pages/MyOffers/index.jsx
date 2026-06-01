@@ -1,24 +1,17 @@
 import { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import api from "../../services/api";
-import { Header } from "../../layout";
-import { OfferCard } from "../../components";
-import { getCategoryName } from "../../utils/formatters";
+import { OfferList } from "../../components";
 import { baseUrl } from "../../utils/constants";
-import styles from "./home.module.css";
+import styles from "./myoffers.module.css";
 
-const Home = () => {
+const MyOffers = () => {
   const [offers, setOffers] = useState([]);
-  const [category, setCategory] = useState("");
 
   useEffect(() => {
     const loadOffers = async () => {
-      try {
-        const response = await api.get("/api/v1/offers/");
-        setOffers(response.data);
-      } catch (err) {
-        console.error("Failed to load offers: ", err);
-      }
+      const response = await api.get("/api/v1/offers/me/");
+      setOffers(response.data);
     };
 
     loadOffers();
@@ -29,21 +22,21 @@ const Home = () => {
   const mainImage = (offer) =>
     offer.media && offer.media.length > 0 ? offer.media[0].file : null;
 
-  const categories = useMemo(() => {
-    const name = offers.map(getCategoryName).filter(Boolean);
-    return ["all", ...Array.from(new Set(name))];
-  }, [offers]);
+  const handleDeleteStateUpdate = (id) => {
+    setOffers((prevOffers) => prevOffers.filter((offer) => offer.id !== id));
+  };
 
   return (
     <div className={styles.container}>
-      <Header />
+      <h3 className={styles.header}>My Offers</h3>
       <div className={styles.grid}>
         {offers.map((offer) => (
-          <OfferCard
+          <OfferList
             key={offer.id}
             offer={offer}
             ownerPhoto={ownerPhoto}
             mainImage={mainImage}
+            onDeleteSuccess={handleDeleteStateUpdate}
           />
         ))}
       </div>
@@ -51,4 +44,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default MyOffers;

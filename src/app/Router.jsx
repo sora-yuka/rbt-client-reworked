@@ -7,6 +7,8 @@ const Router = () => (
     <Routes>
       <Route element={<Components.Wrapper />}>
         <Route path="/" element={<Pages.Home />} />
+        <Route path="/offers/my" element={<Pages.MyOffers />} />
+        <Route path="/offer/:id" element={<Pages.Detail />} />
       </Route>
       <Route path="*" element={<Pages.Notfound />} />
       <Route path="/register" element={<Pages.Signup />} />

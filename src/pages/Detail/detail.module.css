@@ -1,0 +1,169 @@
+.detailContainer {
+  padding: 60px 0;
+}
+
+.loadingContainer {
+  padding: 60px 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+.backLink {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease-in-out;
+}
+
+.backLink:hover {
+  transform: translateY(-4px);
+}
+
+.backLinkIcon {
+  width: 16px;
+  margin-right: 10px;
+}
+
+.mainContent {
+  display: flex;
+  gap: 40px;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: var(--bg);
+  border-radius: 18px;
+  box-shadow:
+    rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.imageSide {
+  flex: 1;
+}
+
+.productImage {
+  width: 100%;
+  height: 400px;
+  border-radius: 15px;
+  border: 1px solid var(--border);
+  object-fit: cover;
+}
+
+.infoSide {
+  flex: 1;
+}
+
+.metaWrapper {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  gap: 30px;
+}
+
+.authorProfile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.authorAvatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.authorName {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.productTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.descriptionBox {
+  width: 100%;
+  max-width: 540px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.descriptionHeader {
+  font-weight: 500;
+  padding-bottom: 10px;
+  color: var(--text);
+}
+
+.descriptionText {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.timeBadge {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  gap: 10px;
+}
+
+.timeIcon {
+  width: 18px;
+}
+
+.actionWrapper {
+  width: 100%;
+  max-width: 540px;
+}
+
+.btnPrimary,
+.btnSecondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: 100%;
+  padding: 12px 32px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.btnPrimary {
+  background-color: var(--primary);
+  color: #ffffff;
+  border: none;
+}
+
+.btnSecondary {
+  background-color: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btnIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.btnPrimary:hover,
+.btnSecondary:hover {
+  box-shadow:
+    rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  transform: translateY(-1px);
+}
+
+.btnPrimary:active,
+.btnSecondary:active {
+  box-shadow: none;
+  transform: translateY(0);
+}

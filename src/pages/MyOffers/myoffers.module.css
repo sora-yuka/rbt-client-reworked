@@ -1,0 +1,9 @@
+.container {
+  margin: 40px 0;
+}
+
+.header {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--text);
+}
