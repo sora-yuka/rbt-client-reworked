@@ -61,16 +61,24 @@ const OfferList = ({ offer, onDeleteSuccess }) => {
               <img src="/src/assets/icons/clock.svg" />
               Last update {offer.time_since_update}
             </span>
-            <button
-              className={styles.deleteBtn}
-              onClick={handleDelete}
-              aria-label="Delete offer"
-            >
-              <img
-                src="/src/assets/icons/trash.svg"
-                className={styles.deleteIcon}
-              />
-            </button>
+            <div className={styles.btnWrapper}>
+              <button className={styles.editBtn}>
+                <img
+                  src="/src/assets/icons/pen.svg"
+                  className={styles.editIcon}
+                />
+              </button>
+              <button
+                className={styles.deleteBtn}
+                onClick={handleDelete}
+                aria-label="Delete offer"
+              >
+                <img
+                  src="/src/assets/icons/trash.svg"
+                  className={styles.deleteIcon}
+                />
+              </button>
+            </div>
           </div>
         </div>
       </div>

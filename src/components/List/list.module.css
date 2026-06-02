@@ -79,12 +79,17 @@
   height: 16px;
 }
 
+.btnWrapper {
+  display: flex;
+  gap: 5px;
+}
+
 .deleteBtn {
   padding: 6px;
   display: flex;
   align-items: center;
   transition: .2s ease all;
-  border-radius: 50%;
+  border-radius: 6px;
 }
 
 .deleteIcon {
@@ -93,4 +98,20 @@
 
 .deleteBtn:hover {
   background-color: #fbd0d0;
+}
+
+.editBtn {
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  transition: .2s ease all;
+  border-radius: 6px;
+}
+
+.editIcon {
+  width: 18px;
+}
+
+.editBtn:hover {
+  background-color: #ECF6EF;
 }

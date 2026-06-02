@@ -1,8 +1,9 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useCallback } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../../context/auth";
+import toast from "react-hot-toast";
 import api from "../../services/api";
-import defaultAvatar from "../../assets/icons/circle-user.svg"
+import defaultAvatar from "../../assets/icons/circle-user.svg";
 import styles from "./signup.module.css";
 
 const Signup = () => {
@@ -51,10 +52,15 @@ const Signup = () => {
     }
   };
 
-  const handleImageChange = (event) => {
+  const handleImageChange = useCallback((event) => {
+    const toastId = toast.loading("Loading image...");
+
     const file = event.target.files?.[0];
-    if (!file) return;
-    if (file.size > 2 * 1024 * 1024) {
+    if (!file) {
+      return;
+    }
+    if (file.size > 10 * 1024 * 1024) {
+      toast.error("File size exceeds limit.", { id: toastId });
       setError("Image must be 2 MB or smaller");
       event.target.value = "";
       return;
@@ -62,7 +68,8 @@ const Signup = () => {
     setError("");
     setProfilePhoto(file);
     setImagePreview(URL.createObjectURL(file));
-  };
+    toast.success("Image uploaded successfull", { id: toastId });
+  });
 
   const handleChange = (e) => {
     setFormData((prev) => ({
@@ -87,7 +94,7 @@ const Signup = () => {
             />
           </div>
           <h2 className={styles.visualTitle}>Upload Image</h2>
-          <p className={styles.visualText}>Max File Size: 2mb</p>
+          <p className={styles.visualText}>Max File Size: 10mb</p>
           <button
             className={styles.uploadBtn}
             type="button"

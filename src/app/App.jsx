@@ -4,7 +4,7 @@ import Router from "./Router";
 
 const App = () => (
   <AuthProvider>
-    <Toaster position="bottom-center"/>
+    <Toaster position="top-center"/>
     <Router />
   </AuthProvider>
 );

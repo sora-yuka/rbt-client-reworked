@@ -81,7 +81,7 @@
 .uploadBtn {
   margin: 20px 0;
   padding: 12px 32px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--text);
   border: 1px solid #898989;
   border-radius: 99px;
@@ -94,7 +94,7 @@
 
 .uploadBtn:hover {
   color: #fff;
-  background-color: #282828;
+  background-color: #12142D;
 }
 
 .uploadBtn:active {
