@@ -45,7 +45,7 @@
 
 .productImage {
   width: 100%;
-  height: 400px;
+  height: 100%;
   border-radius: 15px;
   border: 1px solid var(--border);
   object-fit: cover;
@@ -59,7 +59,7 @@
   display: flex;
   flex-direction: column;
   padding-top: 20px;
-  gap: 30px;
+  gap: 20px;
 }
 
 .authorProfile {
@@ -88,7 +88,6 @@
 
 .descriptionBox {
   width: 100%;
-  max-width: 540px;
   padding: 10px;
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -103,6 +102,45 @@
 .descriptionText {
   font-size: 14px;
   line-height: 1.5;
+}
+
+.desiredOfferBox {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.desiredOfferHeader {
+  font-weight: 500;
+  padding-bottom: 10px;
+  color: var(--text);
+}
+
+.desiredOfferText {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.contactHeader {
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.contactIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.contactMeta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contactMeta p {
+  font-size: 14px;
 }
 
 .timeBadge {

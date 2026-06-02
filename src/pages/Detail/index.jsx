@@ -70,6 +70,23 @@ const Detail = () => {
               <p className={styles.descriptionText}>{offer.description}</p>
             </div>
 
+            <div className={styles.desiredOfferBox}>
+              <h4 className={styles.desiredOfferHeader}>Desired offer</h4>
+              {offer.desired_offer ? (
+                <p className={styles.desiredOfferText}>{offer.desired_offer}</p>
+              ) : (
+                <p className={styles.desiredOfferText}>Contractual</p>
+              )}
+            </div>
+
+            <div className={styles.contact}>
+              <h4 className={styles.contactHeader}>Contact</h4>
+              <div className={styles.contactMeta}>
+                <img src="/src/assets/icons/phone.svg" className={styles.contactIcon} />
+                <p>{offer.phone}</p>
+              </div>
+            </div>
+
             <div className={styles.timeBadge}>
               <img
                 src="/src/assets/icons/clock.svg"

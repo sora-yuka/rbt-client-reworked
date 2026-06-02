@@ -112,7 +112,7 @@ const CreateOffer = () => {
             <input
               type="text"
               name="title"
-              placeholder="Title"
+              placeholder="Write item name"
               required
               value={formData.title}
               onChange={handleChange}
@@ -124,7 +124,7 @@ const CreateOffer = () => {
             <input
               type="text"
               name="desired_offer"
-              placeholder="Desired offer"
+              placeholder="What item you want?"
               value={formData.desired_offer}
               onChange={handleChange}
             />
