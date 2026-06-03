@@ -10,6 +10,7 @@ const Router = () => (
         <Route path="/offer/:id" element={<Pages.Detail />} />
         <Route path="/offers/my" element={<Pages.MyOffers />} />
         <Route path="/offers/new" element={<Pages.CreateOffer />} />
+        <Route path="/deals" element={<Pages.Deals />} />
       </Route>
       <Route path="*" element={<Pages.Notfound />} />
       <Route path="/register" element={<Pages.Signup />} />

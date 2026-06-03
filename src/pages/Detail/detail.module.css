@@ -207,3 +207,59 @@
   box-shadow: none;
   transform: translateY(0);
 }
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: var(--bg);
+  padding: 30px;
+  border-radius: 18px;
+  width: 100%;
+  max-width: 460px;
+  border: 1px solid var(--border);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px -5px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.offerSelect {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background-color: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.modalActions .btnPrimary,
+.modalActions .btnSecondary {
+  width: auto;
+  flex: 1;
+}

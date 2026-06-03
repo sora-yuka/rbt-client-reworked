@@ -10,24 +10,30 @@ export const AuthProvider = ({ children }) => {
   });
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState({
+    username: localStorage.getItem("username") || null,
     profilePhoto: localStorage.getItem("profile_photo") || null,
   });
 
   useEffect(() => {
     const accessToken = tokenService.getAccessToken();
+    const savedUsername = localStorage.getItem("username");
     const savedPhoto = localStorage.getItem("profile_photo");
 
     if (isAuthorized) {
       setIsAuthorized(true);
-      setUser({ profilePhoto: savedPhoto || null });
+      setUser({
+        profilePhoto: savedPhoto || null,
+        username: savedUsername || null,
+      });
     } else {
       setIsAuthorized(false);
-      setUser({ profilePhoto: null });
+      setUser({ profilePhoto: null, username: null });
     }
     setLoading(false);
   }, []);
 
   const logout = () => {
+    localStorage.removeItem("username");
     localStorage.removeItem("profile_photo");
     tokenService.clearTokens();
     setUser({ profilePhoto: null });
@@ -41,12 +47,12 @@ export const AuthProvider = ({ children }) => {
   const login = async (credentials) => {
     try {
       const response = await api.post("/api/v1/users/login/", credentials);
-      const { access, refresh, profile_photo } = response.data;
+      const { access, refresh, username, profile_photo } = response.data;
 
       tokenService.setTokens(access, refresh);
 
       localStorage.setItem("profile_photo", profile_photo || "");
-      setUser({ profilePhoto: profile_photo || null });
+      setUser({ username: username, profilePhoto: profile_photo || null });
 
       setIsAuthorized(true);
       return { success: true };
